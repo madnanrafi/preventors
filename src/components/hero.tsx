@@ -72,7 +72,7 @@ export function Hero() {
                                     </div>
                                     <div className="space-y-2">
                                         <Label htmlFor="phone" className="text-slate-700 font-medium">Phone Number</Label>
-                                        <Input id="phone" type="tel" placeholder="0340-0054727" required className="h-11" />
+                                        <Input id="phone" type="tel" placeholder="0300-0000000" required className="h-11" />
                                     </div>
                                     <Button type="submit" className="w-full h-12 text-lg font-bold bg-blue-600 hover:bg-blue-700 shadow-md transition-all mt-2">
                                         Book My Free Inspection
