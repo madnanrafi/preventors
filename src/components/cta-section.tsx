@@ -17,7 +17,7 @@ export function CTASection() {
                         Book My Free Inspection
                     </Button>
                     <Button variant="outline" className="h-14 px-8 text-lg font-bold border-blue-400 bg-transparent text-white hover:bg-blue-800 hover:text-white w-full sm:w-auto">
-                        Call: 0300 1234567
+                        Call: 0340-0054727
                     </Button>
                 </div>
             </div>
