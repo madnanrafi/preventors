@@ -1,10 +1,31 @@
+"use client";
+
+import { useActionState } from "react";
+import { useFormStatus } from "react-dom";
+import { submitContactForm } from "@/app/actions";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Star, ShieldCheck, Phone } from "lucide-react";
 
+function SubmitButton() {
+    const { pending } = useFormStatus();
+
+    return (
+        <Button
+            type="submit"
+            disabled={pending}
+            className="w-full h-12 text-lg font-bold bg-blue-600 hover:bg-blue-700 shadow-md transition-all mt-2 disabled:opacity-50 disabled:cursor-not-allowed"
+        >
+            {pending ? "Submitting..." : "Book My Free Inspection"}
+        </Button>
+    );
+}
+
 export function Hero() {
+    const [state, formAction] = useActionState(submitContactForm, { success: false, message: "" });
+
     return (
         <section className="relative w-full bg-slate-50 border-b border-slate-200 lg:pt-24 pt-12 pb-16 overflow-hidden">
             <div className="container mx-auto px-4 md:px-6">
@@ -65,18 +86,24 @@ export function Hero() {
                                 </CardDescription>
                             </CardHeader>
                             <CardContent>
-                                <form className="space-y-4">
+                                <form action={formAction} className="space-y-4">
                                     <div className="space-y-2">
                                         <Label htmlFor="name" className="text-slate-700 font-medium">Full Name</Label>
-                                        <Input id="name" placeholder="Ali Khan" required className="h-11" />
+                                        <Input id="name" name="name" placeholder="Ali Khan" required className="h-11" />
                                     </div>
                                     <div className="space-y-2">
                                         <Label htmlFor="phone" className="text-slate-700 font-medium">Phone Number</Label>
-                                        <Input id="phone" type="tel" placeholder="0300-0000000" required className="h-11" />
+                                        <Input id="phone" name="phone" type="tel" placeholder="0300-0000000" required className="h-11" />
                                     </div>
-                                    <Button type="submit" className="w-full h-12 text-lg font-bold bg-blue-600 hover:bg-blue-700 shadow-md transition-all mt-2">
-                                        Book My Free Inspection
-                                    </Button>
+
+                                    <SubmitButton />
+
+                                    {state.message && (
+                                        <div className={`text-center text-sm p-2 rounded ${state.success ? 'bg-green-50 text-green-600' : 'bg-red-50 text-red-600'}`}>
+                                            {state.message}
+                                        </div>
+                                    )}
+
                                     <div className="flex items-center justify-center gap-2 pt-2 text-xs text-slate-400">
                                         <ShieldCheck className="w-3 h-3" />
                                         <span>Your information is 100% safe. No spam.</span>
