@@ -39,10 +39,10 @@ export function Hero() {
                                 #1 Pest Control in Rawalpindi
                             </div>
                             <h1 className="text-4xl font-extrabold tracking-tight text-slate-900 sm:text-5xl xl:text-6xl">
-                                Live Pest-Free & <span className="text-blue-600">Protect Your Family</span>
+                                Guaranteed Pest Reduction in <span className="text-blue-600">24hrs</span> or Free Return Visit
                             </h1>
                             <p className="max-w-[600px] text-lg text-slate-600 md:text-xl leading-relaxed">
-                                Don’t let pests take over your home. We provide professional, safe, and effective pest control services in Rawalpindi. Get peace of mind today.
+                                Professional, safe pest control trusted by 1000+ local homes.
                             </p>
                         </div>
 
