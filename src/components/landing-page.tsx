@@ -25,7 +25,7 @@ export function LandingPage() {
                     </div>
                     <div className="flex items-center gap-3">
                         <a
-                            href="https://wa.me/923400054727"
+                            href="https://wa.me/923375627617"
                             target="_blank"
                             rel="noopener noreferrer"
                             className="flex items-center gap-2 text-sm font-medium text-slate-700 hover:text-green-600 transition-colors"
@@ -38,13 +38,13 @@ export function LandingPage() {
                         </a>
 
                         <a
-                            href="tel:03400054727"
+                            href="tel:03375627617"
                             className="flex items-center gap-2 text-sm font-medium text-slate-700 hover:text-blue-600 transition-colors"
                         >
                             <div className="flex items-center justify-center w-9 h-9 rounded-full bg-blue-50 text-blue-600 hover:bg-blue-100 transition-colors">
                                 <Phone className="w-4 h-4" />
                             </div>
-                            <span className="hidden sm:inline-block">0340-0054727</span>
+                            <span className="hidden sm:inline-block">0337-5627617</span>
                         </a>
                     </div>
                 </div>
